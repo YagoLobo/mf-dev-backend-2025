@@ -111,6 +111,7 @@ namespace mf_dev_backend_2025.Controllers
         }
 
 
+        [AllowAnonymous]
         public IActionResult Create()
         {
             return View();
@@ -118,6 +119,7 @@ namespace mf_dev_backend_2025.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> Create([Bind("Id,Nome,Senha,Perfil")] Usuario usuario)
         {
             if (ModelState.IsValid)
